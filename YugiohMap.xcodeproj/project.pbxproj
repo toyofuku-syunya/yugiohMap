@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD43DD411EEFF5AC00EF703B /* cardrush.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD43DD401EEFF5AC00EF703B /* cardrush.jpg */; };
+		BD43DD431EEFF68400EF703B /* spiral.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD43DD421EEFF68400EF703B /* spiral.jpeg */; };
+		BD43DD491EF0D58B00EF703B /* chibakan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD43DD481EF0D58B00EF703B /* chibakan.jpeg */; };
 		BD6A82C21EEAB08A00E69CFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6A82C11EEAB08A00E69CFA /* AppDelegate.swift */; };
 		BD6A82C41EEAB08A00E69CFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6A82C31EEAB08A00E69CFA /* ViewController.swift */; };
 		BD6A82C71EEAB08A00E69CFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6A82C51EEAB08A00E69CFA /* Main.storyboard */; };
@@ -14,6 +17,7 @@
 		BD6A82CC1EEAB08A00E69CFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6A82CA1EEAB08A00E69CFA /* LaunchScreen.storyboard */; };
 		BD6A82D71EEAB08A00E69CFA /* YugiohMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6A82D61EEAB08A00E69CFA /* YugiohMapTests.swift */; };
 		BD6A82E21EEAB08A00E69CFA /* YugiohMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6A82E11EEAB08A00E69CFA /* YugiohMapUITests.swift */; };
+		BDFEECF11EF6BDB6001A4B85 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFEECF01EF6BDB6001A4B85 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD43DD401EEFF5AC00EF703B /* cardrush.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardrush.jpg; sourceTree = "<group>"; };
+		BD43DD421EEFF68400EF703B /* spiral.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spiral.jpeg; sourceTree = "<group>"; };
+		BD43DD481EF0D58B00EF703B /* chibakan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chibakan.jpeg; sourceTree = "<group>"; };
 		BD6A82BE1EEAB08A00E69CFA /* YugiohMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YugiohMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6A82C11EEAB08A00E69CFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD6A82C31EEAB08A00E69CFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,7 @@
 		BD6A82DD1EEAB08A00E69CFA /* YugiohMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YugiohMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6A82E11EEAB08A00E69CFA /* YugiohMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YugiohMapUITests.swift; sourceTree = "<group>"; };
 		BD6A82E31EEAB08A00E69CFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDFEECF01EF6BDB6001A4B85 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDFEECF11EF6BDB6001A4B85 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +90,10 @@
 				BD6A82D51EEAB08A00E69CFA /* YugiohMapTests */,
 				BD6A82E01EEAB08A00E69CFA /* YugiohMapUITests */,
 				BD6A82BF1EEAB08A00E69CFA /* Products */,
+				BD43DD401EEFF5AC00EF703B /* cardrush.jpg */,
+				BD43DD421EEFF68400EF703B /* spiral.jpeg */,
+				BD43DD481EF0D58B00EF703B /* chibakan.jpeg */,
+				BDFEECEF1EF6BDB5001A4B85 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +136,14 @@
 				BD6A82E31EEAB08A00E69CFA /* Info.plist */,
 			);
 			path = YugiohMapUITests;
+			sourceTree = "<group>";
+		};
+		BDFEECEF1EF6BDB5001A4B85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDFEECF01EF6BDB6001A4B85 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +259,9 @@
 				BD6A82CC1EEAB08A00E69CFA /* LaunchScreen.storyboard in Resources */,
 				BD6A82C91EEAB08A00E69CFA /* Assets.xcassets in Resources */,
 				BD6A82C71EEAB08A00E69CFA /* Main.storyboard in Resources */,
+				BD43DD431EEFF68400EF703B /* spiral.jpeg in Resources */,
+				BD43DD491EF0D58B00EF703B /* chibakan.jpeg in Resources */,
+				BD43DD411EEFF5AC00EF703B /* cardrush.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +538,7 @@
 				BD6A82E81EEAB08A00E69CFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD6A82E91EEAB08A00E69CFA /* Build configuration list for PBXNativeTarget "YugiohMapTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +547,7 @@
 				BD6A82EB1EEAB08A00E69CFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD6A82EC1EEAB08A00E69CFA /* Build configuration list for PBXNativeTarget "YugiohMapUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +556,7 @@
 				BD6A82EE1EEAB08A00E69CFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

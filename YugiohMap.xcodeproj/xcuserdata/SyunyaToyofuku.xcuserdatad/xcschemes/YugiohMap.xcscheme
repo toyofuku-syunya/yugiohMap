@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD6A82BD1EEAB08A00E69CFA"
+               BuildableName = "YugiohMap.app"
+               BlueprintName = "YugiohMap"
+               ReferencedContainer = "container:YugiohMap.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD6A82D11EEAB08A00E69CFA"
+               BuildableName = "YugiohMapTests.xctest"
+               BlueprintName = "YugiohMapTests"
+               ReferencedContainer = "container:YugiohMap.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD6A82DC1EEAB08A00E69CFA"
+               BuildableName = "YugiohMapUITests.xctest"
+               BlueprintName = "YugiohMapUITests"
+               ReferencedContainer = "container:YugiohMap.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "BD6A82BD1EEAB08A00E69CFA"
+            BuildableName = "YugiohMap.app"
+            BlueprintName = "YugiohMap"
+            ReferencedContainer = "container:YugiohMap.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "BD6A82BD1EEAB08A00E69CFA"
+            BuildableName = "YugiohMap.app"
+            BlueprintName = "YugiohMap"
+            ReferencedContainer = "container:YugiohMap.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "BD6A82BD1EEAB08A00E69CFA"
+            BuildableName = "YugiohMap.app"
+            BlueprintName = "YugiohMap"
+            ReferencedContainer = "container:YugiohMap.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
