@@ -6,35 +6,66 @@
 //  Copyright © 2017年 Syunya Toyofuku. All rights reserved.
 //
 import UIKit
-import Foundation
+import CoreLocation
 
-class shop:UIViewController {
+class shopClass {
     
+    var lat:Double
+    var long:Double
+    var location:Double
+    var name:String
+    var image:String
     
-    
-}
-
-class FrinkClass {
-    var name : String! //最初に初期値が必要になる
-    var price : Int = 0
-    
-    init(name : String, price : Int){
+    init?(lat: Double,long: Double,location: Double , name: String, image: String){
+        
+        self.lat = lat
+        self.long = long
+        self.location = location
         self.name = name
-        self.price = price //self.で呼び出すと、そのクラスの変数　付けていないとその関数の引数などの変数を指定している
+        self.image = image
     }
+    
+    func calLocation(location: CLLocationCoordinate2D){
+        var distance:Double = 0
+        var width:Double = 0
+        var height:Double = 0
+    
+            width  = location.latitude - lat
+            width = abs(width)
+            height = location.longitude - long
+            height = abs(height)
+        
+        distance = width * width + height * height
+                distance = sqrt(distance)
+        
+        self.location = distance
+        
+        print("shopClassの処理はこちら")
+        print(distance)
+        print(self.location)
+        
+    }
+    
+//    func gpsCal(_ gps:gps) -> String {
+//        var distance:Double = 0
+//        var width:Double = 0
+//        var height:Double = 0
+//        if myLocation != nil{
+//            width = myLocation.latitude - gps.lat
+//            width = abs(width)
+//            height = myLocation.longitude - gps.long
+//            height = abs(height)
+//        }
+    
+//        distance = width * width + height * height
+//        distance = sqrt(distance)
+//        return String(distance)
+//    }
+//    
+//    func culcTax(tax: Float) {
+//        print(Float(price) * tax)
+//    }
+    
 }
 
-func culcTax(tax : Float){
-    print(Float(price)*tax)
-    
-    
-}
 
-//呼び出し
-cola?.culcTax(tax:1.08)
-
-////ViewController
-//let cola = DrinkClass(name: , price : )
-//drinkArray.
-//
-//print(Float[drinkArray[0].price) * 1.08 )

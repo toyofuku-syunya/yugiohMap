@@ -22,8 +22,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var myLocation:CLLocationCoordinate2D!
     
     
-
+    
+    
+    
     override func viewDidLoad() {
+        startTimer()
         
         
         
@@ -60,7 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // 精度
         myLocationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-
+        
         // セキュリティ認証のステータスを取得.
         let status = CLLocationManager.authorizationStatus()
         
@@ -69,19 +72,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("not determined")
             myLocationManager.requestWhenInUseAuthorization()
         }
-
+        
         // 位置情報の更新を開始.
         myLocationManager.startUpdatingLocation()
         
         yugioh()
         
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     //セルの数をshopNameArray.countの数に合わせる
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sortedShopArray.count
@@ -99,21 +104,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // Cellに店の画像を表示する
         cell.imageView!.image = UIImage(named:sortedShopArray[indexPath.row][2])
-
- 
+        
+        
         return cell
     }
     
     //セルが押された時に呼ばれるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         NSLog("%@が選ばれました",sortedShopArray[indexPath.row][1])
         
         _ = tableView.cellForRow(at:indexPath)
         
         shopDetail(indexPath:indexPath.row)
     }
-
+    
     
     //ショップ欄がタッチされた時の処理＿別画面への遷移
     func shopDetail(indexPath:Int){
@@ -154,7 +159,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var lat:Double
         var long:Double
     }
-
+    
     //店を追加するときは、構造体gpsを用いて位置情報を登録する
     //gps情報は小数点以下7程度が望ましい。精度が高すぎると、GPSが示す地点ジャストにいる際に原因不明のエラーが起こる可能性がある
     
@@ -163,13 +168,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let chibakan = gps(lat:35.675034135468195, long:140.00128984451294)
     let doukutu = gps(lat: 35.64216, long: 140.04963)
     let labotsuda = gps(lat:35.6895004, long: 140.0193357)
-
+    
     
     
     
     
     //読み込み時に行う動作。配列の構成を行う。
-      func yugioh(){
+    func yugioh(){
+        
         
         
         //店を追加するときは、shopArray.append で、以下の様に記載する
@@ -193,13 +199,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         sortedShopArray = shopArray.sorted  { $0[0] < $1[0] }
         
         print("sort後の非破壊ソート配列sortedShopArrayの中身\n",sortedShopArray)
+        
+        classTest()
     }
     
-    //現在地が更新された時にreSortメソッドを呼び出し、現在地からの距離を再計算して配列を再構成し、その結果をTableViewに表示する
+    //10秒ごとにreSortメソッドを呼び出し、現在地からの距離を再計算して配列を再構成し、その結果をTableViewに表示する
     func reSort(){
-//        for i in 0...100 {
-//            shopArray[i][0] = gpsCal(shopNameArray[i])
-//        }
         
         shopArray[0][0] = gpsCal(cardRush)
         shopArray[1][0] = gpsCal(spiral)
@@ -211,7 +216,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         sortedShopArray = shopArray.sorted { $0[0] < $1[0] }
         print("reSortメソッドを実行")
         print(sortedShopArray)
-    
+        
         //TableViewの表示をリセット
         myTableView.reloadData()
     }
@@ -220,44 +225,70 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //GPSから値を読み込んだ時に呼び出される
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        print("現在の位置情報")
-        
         // 配列から現在座標を取得.
         let myLocations: NSArray = locations as NSArray
         let myLastLocation: CLLocation = myLocations.lastObject as! CLLocation
         myLocation = myLastLocation.coordinate
         
-        
+        print("現在の位置情報")
         print("\(myLocation.latitude), \(myLocation.longitude)")
         
-        reSort()
+        
         
     }
     
-    let timer:NSTimer?
+    //時間ごとにテーブルビューを並べ替えるコード
+    var timer:Timer?
     
     func startTimer(){
         if timer == nil {
-            　　　　// 0.3s 毎にTemporalEventを呼び出す
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector:"TemporalEvent", userInfo: nil,repeats: true)
+            // 10秒 毎にTemporalEventを呼び出す
+            timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector:"TemporalEvent", userInfo: nil,repeats: true)
         }
     }
-    　　
+    
     //一定タイミングで繰り返し呼び出される関数
-    　 func TemporalEvent(){
-        //処理を記述
+    func TemporalEvent(){
+        reSort()
+        
+        cardrush?.calLocation(location: myLocation)
+        supairaru?.calLocation(location: myLocation)
+        narakan?.calLocation(location: myLocation)
+        toredou?.calLocation(location: myLocation)
+        tsudalabo?.calLocation(location: myLocation)
+        
+        //GPS情報を元にした配列の並べ替えが行われる。10秒ごと
     }
     
     func stopTimer(){
         if timer != nil {
-            timer?.invalidate() timer = nil
+            timer?.invalidate(); timer = nil
         }
     }
     
     @IBOutlet var myTableView: UITableView!
-
-
     
     //ショップの写真を格納する配列
-
+    
+    var testArray:[shopClass] = []
+    
+    func classTest(){
+        testArray.append(cardrush!)
+        testArray.append(supairaru!)
+        testArray.append(narakan!)
+        testArray.append(toredou!)
+        testArray.append(tsudalabo!)
+        
+        print("testArary[0].nameを参照にして値を返す")
+        print(testArray[0].name)
+    }
+    
+    
+    
+    let cardrush = shopClass(lat: 35.69, long: 139.71, location: 0, name: "カードラッシュ秋葉原一号店", image: "cardrush.jpg")
+    let supairaru = shopClass(lat: 35.701746, long: 139.769957, location: 0, name: "すぱいらる", image: "spiral.jpeg")
+    let narakan = shopClass(lat: 35.675034, long: 140.001289, location: 0, name: "千葉鑑定団湾岸習志野店", image: "chibakan.jpeg")
+    let toredou = shopClass(lat: 35.64216, long: 140.0193357, location: 0, name: "トレカの洞窟", image: "cardrush.jpg")
+    let tsudalabo = shopClass(lat: 35.6895004, long: 140.01933, location: 0, name: "カードラボ津田沼店", image:"cardrush.jpg")
+    
 }
