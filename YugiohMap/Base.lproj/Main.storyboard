@@ -52,23 +52,48 @@
             </objects>
             <point key="canvasLocation" x="135" y="138.38028169014083"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="GYj-eu-44f">
+        <!--Detail-->
+        <scene sceneID="1nY-nN-Rar">
             <objects>
-                <viewController storyboardIdentifier="shopDetail" id="H2Q-03-iJq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shopDetail" id="pO9-c4-GwS" customClass="Detail" customModule="YugiohMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nIy-mZ-qfe"/>
-                        <viewControllerLayoutGuide type="bottom" id="OfF-Bd-VWg"/>
+                        <viewControllerLayoutGuide type="top" id="g5G-2j-58p"/>
+                        <viewControllerLayoutGuide type="bottom" id="FBE-I5-54i"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Gco-uO-hnX">
+                    <view key="view" contentMode="scaleToFill" id="wCB-5x-rVY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="店の名前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C26-Z3-MjL">
+                                <rect key="frame" x="87" y="56" width="216" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="62U-C0-lPU">
+                                <rect key="frame" x="16" y="56" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14o-PW-DAj">
+                                <rect key="frame" x="0.0" y="28" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="←戻る"/>
+                                <connections>
+                                    <action selector="restore" destination="pO9-c4-GwS" eventType="touchUpInside" id="LJ3-2q-K6J"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="62U-C0-lPU" id="sDC-ut-Vbl"/>
+                        <outlet property="nameLabel" destination="C26-Z3-MjL" id="6AN-wh-NJD"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bMW-ok-qb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kxb-hW-krS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="923" y="138"/>
+            <point key="canvasLocation" x="787.5" y="137.32394366197184"/>
         </scene>
     </scenes>
 </document>

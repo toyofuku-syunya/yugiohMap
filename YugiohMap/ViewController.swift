@@ -10,11 +10,18 @@ import UIKit
 import MapKit
 import CoreLocation
 
+var selectedShopNumber = 0
+
+var shopArray = [["カードラッシュ秋葉原一号店","cardrush.jpg"]]
+var sortedShopArray = [["0"]]
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,MKMapViewDelegate, CLLocationManagerDelegate{
     
     var myLocationManager: CLLocationManager!
     
     var myLocation:CLLocationCoordinate2D!
+    
+    
 
     override func viewDidLoad() {
         
@@ -66,7 +73,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 位置情報の更新を開始.
         myLocationManager.startUpdatingLocation()
         
-        
         yugioh()
         
     }
@@ -100,13 +106,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //セルが押された時に呼ばれるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        NSLog("%@が選ばれました",shopArray[indexPath.row][1])
+
+        NSLog("%@が選ばれました",sortedShopArray[indexPath.row][1])
         
         _ = tableView.cellForRow(at:indexPath)
         
         shopDetail(indexPath:indexPath.row)
-        
-        
     }
 
     
@@ -114,6 +119,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func shopDetail(indexPath:Int){
         
         print (indexPath)
+        
+        selectedShopNumber = indexPath
+        
         
         //以下移動コード
         
@@ -125,10 +133,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    struct gps{
-        var lat:Double
-        var long:Double
-    }
     
     func gpsCal(_ gps:gps) -> String {
         var distance:Double = 0
@@ -146,18 +150,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return String(distance)
     }
     
+    struct gps{
+        var lat:Double
+        var long:Double
+    }
 
     //店を追加するときは、構造体gpsを用いて位置情報を登録する
     //gps情報は小数点以下7程度が望ましい。精度が高すぎると、GPSが示す地点ジャストにいる際に原因不明のエラーが起こる可能性がある
+    
     let cardRush = gps(lat:35.697893, long:139.771579)
     let spiral = gps(lat:35.701746,long:139.769957)
     let chibakan = gps(lat:35.675034135468195, long:140.00128984451294)
     let doukutu = gps(lat: 35.64216, long: 140.04963)
+    let labotsuda = gps(lat:35.6895004, long: 140.0193357)
 
     
-    var shopArray = [["カードラッシュ秋葉原一号店","cardrush.jpg"]]
-    var sortedShopArray = [["0"]]
     
+    
+    
+    //読み込み時に行う動作。配列の構成を行う。
       func yugioh(){
         
         
@@ -165,12 +176,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         shopArray.append(["すぱいらる","spiral.jpeg"])
         shopArray.append(["千葉鑑定団湾岸習志野店","chibakan.jpeg"])
         shopArray.append(["トレカの洞窟秋葉原店","cardrush.jpg"])
+        shopArray.append(["カードラボ津田沼店","cardrush.jpg"])
         
         //店を追加するときはこの欄に現在地情報の関数gpsCalを用いて現在地からの近さを計算（数値が少ないほど近い）して、配列の最初に追加
         shopArray[0].insert(gpsCal(cardRush), at: 0)
         shopArray[1].insert(gpsCal(spiral), at: 0)
         shopArray[2].insert(gpsCal(chibakan), at: 0)
         shopArray[3].insert(gpsCal(doukutu), at: 0)
+        shopArray[4].insert(gpsCal(labotsuda), at:0)
+        
         
         print(gpsCal(cardRush))
         
@@ -181,28 +195,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("sort後の非破壊ソート配列sortedShopArrayの中身\n",sortedShopArray)
     }
     
+    //現在地が更新された時にreSortメソッドを呼び出し、現在地からの距離を再計算して配列を再構成し、その結果をTableViewに表示する
     func reSort(){
+//        for i in 0...100 {
+//            shopArray[i][0] = gpsCal(shopNameArray[i])
+//        }
         
         shopArray[0][0] = gpsCal(cardRush)
         shopArray[1][0] = gpsCal(spiral)
         shopArray[2][0] = gpsCal(chibakan)
         shopArray[3][0] = gpsCal(doukutu)
+        shopArray[4][0] = gpsCal(labotsuda)
         
         
         sortedShopArray = shopArray.sorted { $0[0] < $1[0] }
-        print("reSortメソッドを実行 \n")
+        print("reSortメソッドを実行")
         print(sortedShopArray)
     
         //TableViewの表示をリセット
         myTableView.reloadData()
-       
     }
     
     
     //GPSから値を読み込んだ時に呼び出される
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        print("didUpdateLocations\n 現在の位置情報")
+        print("現在の位置情報")
         
         // 配列から現在座標を取得.
         let myLocations: NSArray = locations as NSArray
@@ -216,10 +234,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-
+    let timer:NSTimer?
     
+    func startTimer(){
+        if timer == nil {
+            　　　　// 0.3s 毎にTemporalEventを呼び出す
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector:"TemporalEvent", userInfo: nil,repeats: true)
+        }
+    }
+    　　
+    //一定タイミングで繰り返し呼び出される関数
+    　 func TemporalEvent(){
+        //処理を記述
+    }
+    
+    func stopTimer(){
+        if timer != nil {
+            timer?.invalidate() timer = nil
+        }
+    }
     
     @IBOutlet var myTableView: UITableView!
+
+
     
     //ショップの写真を格納する配列
 
