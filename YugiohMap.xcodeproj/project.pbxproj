@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD2CD3251F215BFF005B57CF /* sisukan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD2CD3241F215BFF005B57CF /* sisukan.jpeg */; };
+		BD2CD3271F215C05005B57CF /* chibalabo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD2CD3261F215C05005B57CF /* chibalabo.jpg */; };
 		BD43DD411EEFF5AC00EF703B /* cardrush.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD43DD401EEFF5AC00EF703B /* cardrush.jpg */; };
 		BD43DD431EEFF68400EF703B /* spiral.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD43DD421EEFF68400EF703B /* spiral.jpeg */; };
 		BD43DD491EF0D58B00EF703B /* chibakan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD43DD481EF0D58B00EF703B /* chibakan.jpeg */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD2CD3241F215BFF005B57CF /* sisukan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sisukan.jpeg; sourceTree = "<group>"; };
+		BD2CD3261F215C05005B57CF /* chibalabo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chibalabo.jpg; sourceTree = "<group>"; };
 		BD43DD401EEFF5AC00EF703B /* cardrush.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardrush.jpg; sourceTree = "<group>"; };
 		BD43DD421EEFF68400EF703B /* spiral.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spiral.jpeg; sourceTree = "<group>"; };
 		BD43DD481EF0D58B00EF703B /* chibakan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chibakan.jpeg; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				BD43DD401EEFF5AC00EF703B /* cardrush.jpg */,
 				BD43DD421EEFF68400EF703B /* spiral.jpeg */,
 				BD43DD481EF0D58B00EF703B /* chibakan.jpeg */,
+				BD2CD3241F215BFF005B57CF /* sisukan.jpeg */,
+				BD2CD3261F215C05005B57CF /* chibalabo.jpg */,
 				BDFEECEF1EF6BDB5001A4B85 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -263,7 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD6A82CC1EEAB08A00E69CFA /* LaunchScreen.storyboard in Resources */,
+				BD2CD3271F215C05005B57CF /* chibalabo.jpg in Resources */,
 				BD6A82C91EEAB08A00E69CFA /* Assets.xcassets in Resources */,
+				BD2CD3251F215BFF005B57CF /* sisukan.jpeg in Resources */,
 				BD6A82C71EEAB08A00E69CFA /* Main.storyboard in Resources */,
 				BD43DD431EEFF68400EF703B /* spiral.jpeg in Resources */,
 				BD43DD491EF0D58B00EF703B /* chibakan.jpeg in Resources */,

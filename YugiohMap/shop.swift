@@ -39,33 +39,8 @@ class shopClass {
                 distance = sqrt(distance)
         
         self.location = distance
-        
-        print("shopClassの処理はこちら")
-        print(distance)
-        print(self.location)
-        
     }
-    
-//    func gpsCal(_ gps:gps) -> String {
-//        var distance:Double = 0
-//        var width:Double = 0
-//        var height:Double = 0
-//        if myLocation != nil{
-//            width = myLocation.latitude - gps.lat
-//            width = abs(width)
-//            height = myLocation.longitude - gps.long
-//            height = abs(height)
-//        }
-    
-//        distance = width * width + height * height
-//        distance = sqrt(distance)
-//        return String(distance)
-//    }
-//    
-//    func culcTax(tax: Float) {
-//        print(Float(price) * tax)
-//    }
-    
+
 }
 
 

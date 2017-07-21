@@ -28,14 +28,13 @@ class Detail:UIViewController{
         super.viewDidLoad()
         
         nameLabel.text = "Yugioh"
-        nameLabel.text = sortedShopArray[0][1]
-        nameLabel.text = sortedShopArray[selectedShopNumber][1]
+        nameLabel.text = sortedTestArray[selectedShopNumber].name
         
         
         
         
         // 表示する画像を設定する.
-        let myImage = UIImage(named:sortedShopArray[selectedShopNumber][2])
+        let myImage = UIImage(named:sortedTestArray[selectedShopNumber].image)
         
         // 画像をUIImageViewに設定する.
         myImageView.image = myImage
