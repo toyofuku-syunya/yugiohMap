@@ -29,6 +29,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         startTimer()
         
+        //起動時にもTableViewを表示できるように最初に配列を完成させる。
+        addShopInformationToArray()
+        //その後に、sortedTestArrayをtestArrayのコピーで仮作成する。現時点では位置情報は取得していないので、位置情報でソートしようとするとエラーになる。
+        sortedTestArray = testArray.sorted { $0.location < $1.location }
         
         
         super.viewDidLoad()
@@ -77,7 +81,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 位置情報の更新を開始.
         myLocationManager.startUpdatingLocation()
         
-        classTest()
+        
         
         if myLocation != nil {
             TemporalEvent()
@@ -163,7 +167,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func startTimer(){
         if timer == nil {
-            // 10秒 毎にTemporalEventを呼び出す
+            // x秒 毎にTemporalEventを呼び出す
             timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector:"TemporalEvent", userInfo: nil,repeats: true)
         }
     }
@@ -183,16 +187,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tsudalabo?.calLocation(location: myLocation)
         chibalabo?.calLocation(location: myLocation)
         sisukan?.calLocation(location: myLocation)
-        
+        sisukan?.calLocation(location: myLocation)
+        ysn?.calLocation(location: myLocation)
+        ysn3?.calLocation(location: myLocation)
+        karuto?.calLocation(location: myLocation)
+        toreja?.calLocation(location: myLocation)
+        dragonster?.calLocation(location: myLocation)
+
         
         sortedTestArray = testArray.sorted { $0.location < $1.location }
     
-        //GPS情報を元にした配列の並べ替えが行われる。10秒ごと
+        //GPS情報を元にした配列の並べ替えが行われる。
         
         myTableView.reloadData()
     }
     
-    func classTest(){
+    func addShopInformationToArray(){
         testArray.append(cardrush!)
         testArray.append(supairaru!)
         testArray.append(narakan!)
@@ -200,6 +210,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         testArray.append(tsudalabo!)
         testArray.append(chibalabo!)
         testArray.append(sisukan!)
+        testArray.append(ysn!)
+        testArray.append(ysn3!)
+        testArray.append(karuto!)
+        testArray.append(toreja!)
+        testArray.append(dragonster!)
     }
     
     
@@ -210,7 +225,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let tsudalabo = shopClass(lat: 35.6895004, long: 140.01933, location: 0, name: "カードラボ津田沼店", image:"cardrush.jpg")
     let chibalabo = shopClass(lat: 35.607284998939605, long: 140.11920969080734, location: 0, name: "カードラボ千葉中央店", image: "chibalabo.jpg")
     let sisukan = shopClass(lat: 35.718262, long: 140.261824, location: 0, name: "千葉鑑定団酒々井店", image: "sisukan.jpeg")
-
-  
+    let ysn = shopClass(lat: 34.662213, long: 135.505149, location: 0, name: "イエローサブマリンなんば店", image: "cardrush.jpg")
+    let ysn3 = shopClass(lat: 34.6628341, long: 135.5050107, location: 0, name: "イエローサブマリンなんば3号店", image: "cardrush.jpg")
+    let karuto = shopClass(lat: 34.65447, long: 135.5008969, location: 0, name: "カードカルト大阪日本橋店", image: "cardrush.jpg")
+    let toreja = shopClass(lat: 34.662505, long: 135.505141, location: 0, name: "とれじゃらすオタロード店", image: "cardrush.jpg")
+    let dragonster = shopClass(lat: 34.662958, long: 135.504316, location: 0, name: "ドラゴンスター日本橋店", image: "cardrush.jpg")
+    
 
 }
