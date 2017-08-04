@@ -14,6 +14,7 @@ import CoreLocation
 import Foundation
 import Accounts
 import Social
+import Firebase
 
 class Detail:UIViewController, UITableViewDelegate, UITableViewDataSource{
     
