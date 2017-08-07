@@ -10,6 +10,8 @@ import UIKit
 import MapKit
 import CoreLocation
 import Firebase
+import FirebaseDatabase
+
 
 
 
@@ -32,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         
-//        database = FIRDatabase.database().reference()
+       
         
         startTimer()
         
@@ -259,4 +261,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let ln = shopClass(lat: 34.661824, long: 135.505065, location: 0, name: "カードラボなんば店", image: "ln.jpeg")
     let ln2 = shopClass(lat: 34.552325, long: 135.503946, location: 0, name: "カードラボなんば2号店", image: "ln2.jpg")
     let bgn = shopClass(lat: 34.6627551, long: 135.5042158, location: 0, name: "BIGMAGIC なんば店", image: "bgn.jpeg")
+  
+    
+    
 }

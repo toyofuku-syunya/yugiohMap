@@ -15,6 +15,8 @@ import Foundation
 import Accounts
 import Social
 import Firebase
+import FirebaseDatabase
+
 
 class Detail:UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -33,14 +35,23 @@ class Detail:UIViewController, UITableViewDelegate, UITableViewDataSource{
       self.dismiss(animated: true, completion: nil)   
     }
     
-    
-    
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //labelに選択された店の名前を表示する
         nameLabel.text = sortedTestArray[selectedShopNumber].name
+        
+//        ref.child("shopData").child("\(sortedTestArray[selectedShopNumber].id)").child("name").observe(.value, with: { snapshot in
+//            print("hello world")
+//            let name = snapshot.value as! String
+//            self.nameLabel.text = name
+//            
+//        })
+        
+        
+        
+        
         
         // 表示する画像を設定する
         let myImage = UIImage(named:sortedTestArray[selectedShopNumber].image)

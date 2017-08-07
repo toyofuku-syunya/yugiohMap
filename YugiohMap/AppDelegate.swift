@@ -11,6 +11,8 @@ import Firebase
 import FirebaseDatabase
 
 
+let ref = Database.database().reference()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -18,14 +20,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
+        
+        
+
+        ref.child("shopData").observe(.value, with: { snapshot in
+            print("hello world")
+            let name = snapshot.value as! [String: Any]
+            print("database has changed")
+            print(name)
+
+        })
+            
+        
         return true
     }
+    
+   
     
 
 

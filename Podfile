@@ -9,6 +9,7 @@ target 'YugiohShops' do
  pod 'Fabric'
  pod 'TwitterKit'
  pod 'Firebase/Database'
+ pod 'Firebase/Database'
 
 
 

@@ -11,7 +11,7 @@ import Firebase
 
 
 class shopClass {
-    
+//    var id:String
     var lat:Double
     var long:Double
     var location:Double
@@ -19,7 +19,7 @@ class shopClass {
     var image:String
     
     init?(lat: Double,long: Double,location: Double , name: String, image: String){
-        
+//        self.id = id
         self.lat = lat
         self.long = long
         self.location = location
