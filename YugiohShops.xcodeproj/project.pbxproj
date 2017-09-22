@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0A1EB51F51CEBA00D319A4 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0A1EB41F51CEBA00D319A4 /* Login.swift */; };
 		BD2CD3251F215BFF005B57CF /* sisukan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD2CD3241F215BFF005B57CF /* sisukan.jpeg */; };
 		BD2CD3271F215C05005B57CF /* chibalabo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD2CD3261F215C05005B57CF /* chibalabo.jpg */; };
 		BD43DD411EEFF5AC00EF703B /* cardrush.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD43DD401EEFF5AC00EF703B /* cardrush.jpg */; };
 		BD43DD431EEFF68400EF703B /* spiral.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD43DD421EEFF68400EF703B /* spiral.jpeg */; };
 		BD43DD491EF0D58B00EF703B /* chibakan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD43DD481EF0D58B00EF703B /* chibakan.jpeg */; };
+		BD4EDD321F5BD86B0063C24B /* registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4EDD311F5BD86B0063C24B /* registration.swift */; };
+		BD67EFC81F4B492A00541106 /* sendReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67EFC71F4B492A00541106 /* sendReview.swift */; };
 		BD6A82C21EEAB08A00E69CFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6A82C11EEAB08A00E69CFA /* AppDelegate.swift */; };
 		BD6A82C41EEAB08A00E69CFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6A82C31EEAB08A00E69CFA /* ViewController.swift */; };
 		BD6A82C71EEAB08A00E69CFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6A82C51EEAB08A00E69CFA /* Main.storyboard */; };
@@ -19,7 +22,7 @@
 		BD6A82CC1EEAB08A00E69CFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6A82CA1EEAB08A00E69CFA /* LaunchScreen.storyboard */; };
 		BD6A82D71EEAB08A00E69CFA /* YugiohMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6A82D61EEAB08A00E69CFA /* YugiohMapTests.swift */; };
 		BD6A82E21EEAB08A00E69CFA /* YugiohMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6A82E11EEAB08A00E69CFA /* YugiohMapUITests.swift */; };
-		BD7AA9AD1F18B8840042A48F /* shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7AA9AC1F18B8840042A48F /* shop.swift */; };
+		BD93F5881F38B61200264AAC /* ImportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD93F5871F38B61200264AAC /* ImportData.swift */; };
 		BD968B601F317872007915D0 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD968B5F1F317872007915D0 /* Twitter.framework */; };
 		BDA65DE41F2CB1FB00CAE619 /* ln.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BDA65DDC1F2CB1FB00CAE619 /* ln.jpeg */; };
 		BDA65DE51F2CB1FB00CAE619 /* ln2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BDA65DDD1F2CB1FB00CAE619 /* ln2.jpg */; };
@@ -58,14 +61,17 @@
 		01A43D111BC309CBD13DECC6 /* Pods-YugiohShops.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YugiohShops.release.xcconfig"; path = "Pods/Target Support Files/Pods-YugiohShops/Pods-YugiohShops.release.xcconfig"; sourceTree = "<group>"; };
 		36C0F6B7BBF05CF95FAEBD77 /* Pods_YugiohShopsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YugiohShopsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE82E06079588A115F22B99 /* Pods-YugiohShops.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YugiohShops.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YugiohShops/Pods-YugiohShops.debug.xcconfig"; sourceTree = "<group>"; };
+		BD0A1EB41F51CEBA00D319A4 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		BD2CD3241F215BFF005B57CF /* sisukan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sisukan.jpeg; sourceTree = "<group>"; };
 		BD2CD3261F215C05005B57CF /* chibalabo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chibalabo.jpg; sourceTree = "<group>"; };
 		BD43DD401EEFF5AC00EF703B /* cardrush.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardrush.jpg; sourceTree = "<group>"; };
 		BD43DD421EEFF68400EF703B /* spiral.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spiral.jpeg; sourceTree = "<group>"; };
 		BD43DD481EF0D58B00EF703B /* chibakan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chibakan.jpeg; sourceTree = "<group>"; };
+		BD4EDD311F5BD86B0063C24B /* registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registration.swift; sourceTree = "<group>"; };
 		BD50CEBE1F317195009CEF0D /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../Library/Developer/Xcode/DerivedData/YugiohShops-codjxbqauxkctbaokalfbykheycu/Build/Products/Debug-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
 		BD50CEC01F31719B009CEF0D /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = "../../Library/Developer/Xcode/DerivedData/YugiohShops-codjxbqauxkctbaokalfbykheycu/Build/Products/Debug-iphoneos/nanopb/nanopb.framework"; sourceTree = "<group>"; };
 		BD5473411F31778600BB791C /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = "../../Library/Developer/Xcode/DerivedData/YugiohShops-codjxbqauxkctbaokalfbykheycu/Build/Products/Debug-iphoneos/GTMSessionFetcher/GTMSessionFetcher.framework"; sourceTree = "<group>"; };
+		BD67EFC71F4B492A00541106 /* sendReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sendReview.swift; sourceTree = "<group>"; };
 		BD6A82BE1EEAB08A00E69CFA /* YugiohShops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YugiohShops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6A82C11EEAB08A00E69CFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD6A82C31EEAB08A00E69CFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +85,7 @@
 		BD6A82DD1EEAB08A00E69CFA /* YugiohShopsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YugiohShopsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6A82E11EEAB08A00E69CFA /* YugiohMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YugiohMapUITests.swift; sourceTree = "<group>"; };
 		BD6A82E31EEAB08A00E69CFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD7AA9AC1F18B8840042A48F /* shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shop.swift; sourceTree = "<group>"; };
+		BD93F5871F38B61200264AAC /* ImportData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportData.swift; sourceTree = "<group>"; };
 		BD968B5F1F317872007915D0 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		BDA65DDC1F2CB1FB00CAE619 /* ln.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ln.jpeg; sourceTree = "<group>"; };
 		BDA65DDD1F2CB1FB00CAE619 /* ln2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ln2.jpg; sourceTree = "<group>"; };
@@ -153,9 +159,12 @@
 			isa = PBXGroup;
 			children = (
 				BD6A82C11EEAB08A00E69CFA /* AppDelegate.swift */,
+				BD0A1EB41F51CEBA00D319A4 /* Login.swift */,
+				BD4EDD311F5BD86B0063C24B /* registration.swift */,
 				BD6A82C31EEAB08A00E69CFA /* ViewController.swift */,
+				BD93F5871F38B61200264AAC /* ImportData.swift */,
 				BDC53B801F16950800827453 /* Detail.swift */,
-				BD7AA9AC1F18B8840042A48F /* shop.swift */,
+				BD67EFC71F4B492A00541106 /* sendReview.swift */,
 				BD6A82C51EEAB08A00E69CFA /* Main.storyboard */,
 				BD6A82C81EEAB08A00E69CFA /* Assets.xcassets */,
 				BD6A82CA1EEAB08A00E69CFA /* LaunchScreen.storyboard */,
@@ -430,7 +439,10 @@
 				BD6A82C41EEAB08A00E69CFA /* ViewController.swift in Sources */,
 				BD6A82C21EEAB08A00E69CFA /* AppDelegate.swift in Sources */,
 				BDC53B811F16950800827453 /* Detail.swift in Sources */,
-				BD7AA9AD1F18B8840042A48F /* shop.swift in Sources */,
+				BD0A1EB51F51CEBA00D319A4 /* Login.swift in Sources */,
+				BD93F5881F38B61200264AAC /* ImportData.swift in Sources */,
+				BD67EFC81F4B492A00541106 /* sendReview.swift in Sources */,
+				BD4EDD321F5BD86B0063C24B /* registration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

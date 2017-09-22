@@ -7,10 +7,10 @@ target 'YugiohShops' do
  pod ‘Firebase’
  pod ‘Firebase/Auth’
  pod 'Fabric'
+ pod 'Firebase/Auth'
  pod 'TwitterKit'
  pod 'Firebase/Database'
- pod 'Firebase/Database'
-
+ pod 'Firebase/Storage'
 
 
 end
