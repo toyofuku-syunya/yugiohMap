@@ -10,9 +10,11 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
+let userID:String = Auth.auth().currentUser!.uid
+
 class registration:UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    let userID:String = Auth.auth().currentUser!.uid
+    
     
     @IBOutlet var imageView : UIImageView!
     
@@ -112,14 +114,21 @@ class registration:UIViewController,UIImagePickerControllerDelegate, UINavigatio
         if let data = UIImagePNGRepresentation(sendImage) {
             let riversRef = storageRef.child("images/\(userID)Icon.jpg")
             riversRef.putData(data, metadata: nil, completion: { metaData, error in
-            
             })
         }
-        
         
         let userNameStr = userName.text!
         print(userNameStr)
         ref.child("users").child("\(userID)").updateChildValues(["userName" : userNameStr])
+        ref.child("users/\(userID)").updateChildValues(["settingFinished": "yes"])
+        
+        
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController")
+        
+        nextVC?.modalTransitionStyle = .flipHorizontal
+        
+        present(nextVC!, animated: true, completion: nil)
+        
         
     }
     

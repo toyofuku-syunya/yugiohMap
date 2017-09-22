@@ -18,7 +18,7 @@ class LoginViewController: UIViewController{
 
     //UIViewControllerクラスに遷移する
     func goToNext(){
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController")
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "navigationController")
         
         nextVC?.modalTransitionStyle = .flipHorizontal
         

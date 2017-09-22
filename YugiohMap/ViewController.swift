@@ -130,6 +130,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         shopDetail(indexPath:indexPath.row)
     }
     
+    //設定画面に遷移する移動コード
+    @IBAction func system(){
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "system")
+        
+        nextVC?.modalTransitionStyle = .flipHorizontal
+        
+        self.navigationController?.pushViewController(nextVC!, animated: true)
+    }
     
     //ショップ欄がタッチされた時の処理＿別画面への遷移
     func shopDetail(indexPath:Int){
@@ -142,7 +150,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         nextVC?.modalTransitionStyle = .flipHorizontal
         
-        present(nextVC!, animated: true, completion: nil)
+//        present(nextVC!, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextVC!, animated: true)
         
     }
     
